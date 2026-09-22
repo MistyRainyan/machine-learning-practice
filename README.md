@@ -141,3 +141,12 @@ Iris 数据集共有 150 个样本。
 
 ```bash
 cd 01_ml_introduction
+
+启动 JupyterLab：
+
+```bash
+jupyter lab
+
+打开：
+experiment.ipynb
+依次运行 Notebook 中的代码单元即可复现实验结果。
