@@ -137,16 +137,22 @@ Iris 数据集共有 150 个样本。
 
 ## 8. 运行方式
 
-进入第一周实验目录：
+进入项目根目录后，进入第一周实验目录：
 
 ```bash
 cd 01_ml_introduction
+```
 
 启动 JupyterLab：
 
 ```bash
 jupyter lab
+```
 
-打开：
+在 JupyterLab 中打开：
+
+```text
 experiment.ipynb
+```
+
 依次运行 Notebook 中的代码单元即可复现实验结果。
