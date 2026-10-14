@@ -3,3 +3,11 @@ __pycache__/
 *.pyc
 .vscode/
 .idea/
+.venv/
+.uv-cache/
+.pytest_cache/
+.jupyter-local/
+.DS_Store
+
+# Local Jupyter launcher
+启动JupyterLab.command
