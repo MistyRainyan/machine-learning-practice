@@ -827,11 +827,34 @@ sklearn Perceptron 的混淆矩阵同样为：
 - 测试集 Accuracy：70.78%
 - 初始 Loss：0.6931
 - 最终 Loss：0.4531
-- Diabetes Recall：50%
-- Diabetes F1-score：0.55
+- No Diabetes：Precision 0.75，Recall 0.82，F1-score 0.78
+- Diabetes：Precision 0.60，Recall 0.50，F1-score 0.55
 
 混淆矩阵：
 
-```text
-[[82, 18],
- [27, 27]]
+    [[82, 18],
+     [27, 27]]
+
+其中：
+
+- TN = 82
+- FP = 18
+- FN = 27
+- TP = 27
+
+Scikit-learn LogisticRegression：
+
+- 测试集 Accuracy：70.78%
+- 混淆矩阵与手写逻辑回归模型一致
+- 154 个测试样本的预测结果与手写模型完全一致
+- 两个模型预测结果不同的样本数量为 0
+
+### 实验分析
+
+手写逻辑回归模型的交叉熵损失由初始的 0.6931 下降至 0.4531，说明梯度下降能够有效优化模型参数。
+
+在测试集上，模型取得了 70.78% 的准确率。其中，No Diabetes 类别的 Recall 为 82%，而 Diabetes 类别的 Recall 为 50%。这说明模型对未患糖尿病样本的识别效果较好，但对于患糖尿病样本仍存在一定的漏判情况。
+
+在相同的数据划分和数据预处理条件下，手写逻辑回归与 Scikit-learn LogisticRegression 得到了完全一致的分类结果，说明本实验从零实现的逻辑回归模型能够正确完成二分类任务。
+
+同时，本实验也说明，对于类别分布不完全均衡的分类任务，仅使用 Accuracy 不能全面反映模型性能，还需要结合 Precision、Recall 和 F1-score 等指标进行综合评价。
